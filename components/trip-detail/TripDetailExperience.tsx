@@ -279,16 +279,16 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.32em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">
               {detail.altitudeLine}
             </p>
             <h1 className="trip-hero-title mt-4 max-w-5xl font-heading text-[clamp(3.6rem,14vw,10.5rem)] leading-[0.82] tracking-[0.01em] text-[#F5F4F1] sm:mt-5">
               {trip.title}
             </h1>
-            <p className="trip-hero-copy mt-4 max-w-2xl text-xl leading-tight tracking-[-0.04em] text-[#F5F4F1]/88 sm:mt-5 md:text-4xl xl:text-5xl">
+            <p className="trip-hero-copy mt-4 max-w-[38rem] text-xl leading-[1.08] tracking-[-0.035em] text-[#F5F4F1]/88 sm:mt-5 md:text-[2.4rem] xl:text-[3.15rem]">
               {detail.heroLine}
             </p>
-            <p className="mt-5 max-w-xl text-sm leading-6 text-[#F5F4F1]/64">
+            <p className="mt-6 max-w-[34rem] text-[0.98rem] leading-7 text-[#F5F4F1]/72">
               Trek &amp; Stay confirms route fit, dates, payment steps, and cancellation terms before you commit.
             </p>
           </motion.div>
@@ -299,25 +299,25 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="font-sans text-[0.64rem] font-bold uppercase tracking-[0.24em] text-[#9AA1A6]">
+            <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#BCC2BE]">
               Current departure
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-5 sm:gap-4">
+            <div className="mt-5 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-4">
               <Metric label="Duration" value={trip.durationLabel} />
               <Metric label="Effort" value={trip.difficulty} />
               <Metric label="Group" value={trip.groupSize ?? 'Small group'} />
               <Metric label="Spots" value={trip.spotsLeft ? `${trip.spotsLeft} left` : 'Open'} />
             </div>
-            <div className="mt-5 flex flex-col gap-3 min-[420px]:flex-row sm:mt-7">
+            <div className="mt-6 flex flex-col gap-3 min-[420px]:flex-row sm:mt-8">
               <Link
                 href="#booking"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-[#F5F4F1] px-5 font-sans text-[0.64rem] font-bold uppercase tracking-[0.16em] text-[#0F2E23] transition duration-300 hover:bg-[#CFAF6B] active:translate-y-[1px] sm:h-12 sm:px-6 sm:text-[0.68rem]"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-[#F5F4F1] px-5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[#0F2E23] transition duration-300 hover:bg-[#CFAF6B] active:translate-y-[1px] sm:h-12 sm:px-6 sm:text-[0.66rem]"
               >
                 Reserve this trip
               </Link>
               <Link
                 href={questionIntentHref}
-                className="inline-flex h-11 items-center justify-center rounded-full border border-[#F5F4F1]/12 px-5 font-sans text-[0.64rem] font-bold uppercase tracking-[0.16em] text-[#F5F4F1]/66 transition hover:border-[#CFAF6B]/40 hover:text-[#F5F4F1] sm:border-0 sm:px-0 sm:text-sm sm:normal-case sm:tracking-normal"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-[#F5F4F1]/10 px-5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[#F5F4F1]/76 transition hover:border-[#CFAF6B]/32 hover:text-[#F5F4F1] sm:border-0 sm:px-0 sm:text-sm sm:normal-case sm:tracking-normal"
               >
                 Ask a route question
               </Link>
@@ -330,15 +330,15 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
 
       <section ref={registerReveal} className="mx-auto grid max-w-[1440px] gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8 lg:py-32">
         <div data-animate>
-          <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#CFAF6B]">
+          <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
             Why this route
           </p>
-          <h2 className="mt-5 max-w-lg font-heading text-5xl leading-[0.9] tracking-[0.01em] md:text-7xl">
+          <h2 className="mt-5 max-w-lg font-heading text-5xl leading-[0.9] tracking-[0.01em] md:text-[4.35rem]">
             WHY THIS ROUTE WORKS
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-[0.92fr_1.08fr]">
-          <p data-animate className="self-end text-2xl leading-tight tracking-[-0.04em] text-[#F5F4F1]/86 md:text-4xl">
+          <p data-animate className="self-end text-[1.6rem] leading-[1.12] tracking-[-0.03em] text-[#F5F4F1]/84 md:text-[2.2rem]">
             {detail.emotionalHook}
           </p>
           <div data-animate className="relative min-h-[420px] overflow-hidden rounded-[1.8rem] border border-[#F5F4F1]/10">
@@ -348,7 +348,7 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
               style={{ backgroundImage: `url(${trip.gallery?.[0] ?? trip.image})` }}
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(5,8,7,0.84))]" />
-            <p className="absolute bottom-6 left-6 right-6 max-w-sm text-sm leading-6 text-[#F5F4F1]/70">
+            <p className="absolute bottom-6 left-6 right-6 max-w-sm text-sm leading-7 text-[#F5F4F1]/72">
               Long roads, thin air, and enough silence for the group to become real.
             </p>
           </div>
@@ -358,10 +358,10 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
       <section ref={registerReveal} className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid overflow-hidden border-y border-[#F5F4F1]/12 lg:grid-cols-[0.82fr_1.18fr]">
           <div data-animate className="py-10 pr-0 lg:py-16 lg:pr-10">
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
               Reality check
             </p>
-            <h2 className="mt-5 max-w-xl font-heading text-5xl leading-[0.9] md:text-7xl">
+            <h2 className="mt-5 max-w-xl font-heading text-5xl leading-[0.9] md:text-[4.35rem]">
               BEFORE YOU BOOK, KNOW THIS
             </h2>
           </div>
@@ -379,7 +379,7 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
                 <span className="font-mono text-xs uppercase tracking-[0.22em] text-[#CFAF6B]">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <p className="max-w-2xl text-xl leading-8 text-[#F5F4F1]/84">{check}</p>
+                <p className="max-w-2xl text-[1.08rem] leading-8 text-[#F5F4F1]/82 md:text-[1.15rem]">{check}</p>
               </motion.div>
             ))}
           </div>
@@ -389,12 +389,12 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
       <section ref={registerReveal} className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mb-10 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div data-animate>
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
               Controlled clarity
             </p>
-            <h2 className="mt-5 font-heading text-5xl leading-[0.9] md:text-7xl">KNOW WHAT HAPPENS</h2>
+            <h2 className="mt-5 font-heading text-5xl leading-[0.9] md:text-[4.35rem]">KNOW WHAT HAPPENS</h2>
           </div>
-          <p data-animate className="max-w-2xl text-base leading-7 text-[#F5F4F1]/64">
+          <p data-animate className="max-w-2xl text-base leading-8 text-[#F5F4F1]/68">
             You should understand the route quickly, without reading through brochure language.
           </p>
         </div>
@@ -417,12 +417,12 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
       <section ref={registerReveal} className="py-20 lg:py-28">
         <div className="mx-auto mb-10 grid max-w-[1440px] gap-6 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8 lg:items-end">
           <div data-animate>
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
               Trace evidence
             </p>
-            <h2 className="mt-5 font-heading text-5xl leading-[0.9] md:text-7xl">RAW PROOF, NOT TESTIMONIALS</h2>
+            <h2 className="mt-5 font-heading text-5xl leading-[0.9] md:text-[4.35rem]">RAW PROOF, NOT TESTIMONIALS</h2>
           </div>
-          <p data-animate className="max-w-2xl text-base leading-7 text-[#F5F4F1]/64">
+          <p data-animate className="max-w-2xl text-base leading-8 text-[#F5F4F1]/68">
             Short field notes from people who were actually there, so the trust signal stays concrete.
           </p>
         </div>
@@ -438,10 +438,10 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
       <section ref={registerReveal} id="support" className="mx-auto max-w-[1440px] px-4 pb-28 pt-8 sm:px-6 lg:px-8 lg:pb-20">
         <div className="grid gap-10 border-t border-[#F5F4F1]/12 pt-12 lg:grid-cols-[0.72fr_1.28fr]">
           <div data-animate>
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
               People behind the road
             </p>
-            <h2 className="mt-5 font-heading text-5xl leading-[0.9] md:text-7xl">WHO IS RESPONSIBLE FOR THE ROAD</h2>
+            <h2 className="mt-5 font-heading text-5xl leading-[0.9] md:text-[4.35rem]">WHO IS RESPONSIBLE FOR THE ROAD</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {detail.captains.map((person) => (
@@ -460,13 +460,13 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,8,7,0.2),rgba(5,8,7,0.84)),linear-gradient(180deg,transparent,rgba(5,8,7,0.72))]" />
           </div>
           <div className="p-7 md:p-10 lg:p-12">
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
               Next departure / {formatDate(trip.nextDeparture)}
             </p>
             <h2 className="mt-5 font-heading text-6xl leading-[0.88] md:text-8xl">
               RESERVE YOUR SEAT FOR {formatShortDate(trip.nextDeparture)}
             </h2>
-            <p className="mt-5 max-w-lg text-base leading-7 text-[#F5F4F1]/70">
+            <p className="mt-5 max-w-[33rem] text-base leading-8 text-[#F5F4F1]/74">
               {detail.finalLine} Send a request first. You can confirm terms, safety fit, and payment details before
               you commit.
             </p>
@@ -478,22 +478,22 @@ export default function TripDetailExperience({ trip }: TripDetailExperienceProps
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={bookingIntentHref}
-                className="inline-flex h-[3.25rem] items-center justify-center rounded-full bg-[#F5F4F1] px-7 font-sans text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#0F2E23] transition duration-300 hover:bg-[#CFAF6B] active:translate-y-[1px]"
+                className="inline-flex h-[3.25rem] items-center justify-center rounded-full bg-[#F5F4F1] px-7 font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#0F2E23] transition duration-300 hover:bg-[#CFAF6B] active:translate-y-[1px]"
               >
                 Reserve this trip
               </Link>
               <Link
                 href={questionIntentHref}
-                className="inline-flex h-[3.25rem] items-center justify-center rounded-full border border-[#F5F4F1]/14 px-7 font-sans text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#F5F4F1]/76 transition duration-300 hover:border-[#CFAF6B]/45 hover:text-[#CFAF6B] active:translate-y-[1px]"
+                className="inline-flex h-[3.25rem] items-center justify-center rounded-full border border-[#F5F4F1]/12 px-7 font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#F5F4F1]/78 transition duration-300 hover:border-[#CFAF6B]/36 hover:text-[#CFAF6B] active:translate-y-[1px]"
               >
                 Ask a route question
               </Link>
             </div>
-            <p className="mt-4 text-xs leading-5 text-[#F5F4F1]/54">
+            <p className="mt-5 text-sm leading-6 text-[#F5F4F1]/62">
               No email back-and-forth to get started. The next step is a calm booking form, then a direct payment page
               with clear verification.
             </p>
-            <Link href="/about" className="mt-6 inline-block text-sm text-[#F5F4F1]/54 transition hover:text-[#F5F4F1]">
+            <Link href="/about" className="mt-7 inline-block text-sm text-[#F5F4F1]/62 transition hover:text-[#F5F4F1]">
               See how Trek &amp; Stay runs trips
             </Link>
           </div>
@@ -568,8 +568,8 @@ function BookingDock({
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.19em] text-[#9AA1A6]">{label}</p>
-      <p className="mt-1 font-mono text-sm font-semibold uppercase tracking-[0.06em] text-[#F5F4F1]">{value}</p>
+      <p className="font-sans text-[0.56rem] font-bold uppercase tracking-[0.12em] text-[#BCC2BE]">{label}</p>
+      <p className="mt-1.5 font-mono text-sm font-semibold uppercase tracking-[0.04em] text-[#F5F4F1]">{value}</p>
     </div>
   )
 }
@@ -594,10 +594,10 @@ function ItineraryAccordion({ days }: { days: TripItineraryDay[] }) {
                 Day {String(day.day).padStart(2, '0')}
               </span>
               <span>
-                <span className="block font-heading text-4xl leading-none tracking-[0.01em] text-[#F5F4F1]">
+                <span className="block font-heading text-[2.2rem] leading-none tracking-[0.01em] text-[#F5F4F1]">
                   {day.route}
                 </span>
-                <span className="mt-2 block text-sm leading-6 text-[#F5F4F1]/58">{day.highlight}</span>
+                <span className="mt-2.5 block text-sm leading-6 text-[#F5F4F1]/68">{day.highlight}</span>
               </span>
               <span className="text-2xl leading-none text-[#CFAF6B]">{isOpen ? '-' : '+'}</span>
             </button>
@@ -610,7 +610,7 @@ function ItineraryAccordion({ days }: { days: TripItineraryDay[] }) {
                   transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-6 md:ml-[90px] max-w-2xl text-base leading-7 text-[#F5F4F1]/72">{day.details}</p>
+                  <p className="pb-6 pt-1 md:ml-[90px] max-w-2xl text-base leading-8 text-[#F5F4F1]/72">{day.details}</p>
                 </motion.div>
               ) : null}
             </AnimatePresence>
@@ -633,12 +633,12 @@ function IncludedContrast({ included, notIncluded }: { included: string[]; notIn
 function InclusionColumn({ title, items, muted = false }: { title: string; items: string[]; muted?: boolean }) {
   return (
     <div className={cn('p-6', muted ? 'border-t border-[#F5F4F1]/10 md:border-l md:border-t-0 lg:border-l-0 lg:border-t xl:border-l xl:border-t-0' : '')}>
-      <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">{title}</p>
-      <div className="mt-5 space-y-4">
+      <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#CFAF6B]">{title}</p>
+      <div className="mt-5 space-y-3.5">
         {items.map((item) => (
           <div key={item} className="grid grid-cols-[20px_minmax(0,1fr)] gap-3">
             <span className={cn('mt-2 h-px w-4', muted ? 'bg-[#F5F4F1]/26' : 'bg-[#CFAF6B]')} />
-            <p className="text-sm leading-6 text-[#F5F4F1]/70">{item}</p>
+            <p className={cn('text-sm leading-7', muted ? 'text-[#F5F4F1]/58' : 'text-[#F5F4F1]/72')}>{item}</p>
           </div>
         ))}
       </div>
@@ -658,8 +658,8 @@ function LogisticsPanel({ trip, bestSeason }: { trip: Trip; bestSeason: string }
 
   return (
     <div className="rounded-[1.6rem] border border-[#F5F4F1]/10 bg-[#0F2E23]/54 p-6">
-      <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">Logistics</p>
-      <div className="mt-5 grid grid-cols-2 gap-x-5 gap-y-6">
+      <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#CFAF6B]">Logistics</p>
+      <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-7">
         {items.map(([label, value]) => (
           <Metric key={label} label={label} value={value} />
         ))}
@@ -682,18 +682,18 @@ function TrustLedger({ trip }: { trip: Trip }) {
     <section className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="grid gap-10 border-y border-[#F5F4F1]/12 py-12 lg:grid-cols-[0.78fr_1.22fr]">
         <div>
-          <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#CFAF6B]">
+          <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
             Trust ledger
           </p>
-          <h2 className="mt-5 max-w-xl font-heading text-5xl leading-[0.9] md:text-7xl">
+          <h2 className="mt-5 max-w-xl font-heading text-5xl leading-[0.9] md:text-[4.35rem]">
             WHAT REMOVES DOUBT
           </h2>
         </div>
         <div className="divide-y divide-[#F5F4F1]/10">
           {trustItems.map(([title, body]) => (
-            <div key={title} className="grid gap-3 py-6 md:grid-cols-[190px_minmax(0,1fr)]">
+            <div key={title} className="grid gap-3 py-7 md:grid-cols-[190px_minmax(0,1fr)]">
               <h3 className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#F5F4F1]">{title}</h3>
-              <p className="text-sm leading-6 text-[#9AA1A6]">{body}</p>
+              <p className="text-sm leading-7 text-[#BEC4C0]">{body}</p>
             </div>
           ))}
         </div>
@@ -713,8 +713,8 @@ function ProofFrame({ moment }: { moment: TripProofMoment }) {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(5,8,7,0.88))]" />
       </div>
       <figcaption className="p-6">
-        <p className="text-xl leading-8 text-[#F5F4F1]/86">"{moment.quote}"</p>
-        <p className="mt-5 font-sans text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#CFAF6B]">
+        <p className="text-[1.08rem] leading-8 text-[#F5F4F1]/84">"{moment.quote}"</p>
+        <p className="mt-4 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#CFAF6B]/88">
           {moment.meta}
         </p>
       </figcaption>
@@ -731,10 +731,10 @@ function CaptainCard({ person }: { person: TripPerson }) {
     >
       <div>
         <h3 className="font-heading text-4xl leading-none tracking-[0.01em] text-[#F5F4F1]">{person.name}</h3>
-        <p className="mt-2 font-sans text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#CFAF6B]">
+        <p className="mt-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#CFAF6B]">
           {person.role}
         </p>
-        <p className="mt-4 text-sm leading-6 text-[#F5F4F1]/68">{person.line}</p>
+        <p className="mt-4 text-sm leading-7 text-[#F5F4F1]/76">{person.line}</p>
       </div>
     </motion.article>
   )
@@ -748,7 +748,7 @@ function MobileBookingBar({ trip }: { trip: Trip }) {
         className="grid min-h-14 grid-cols-[1fr_auto] items-center gap-3 rounded-[1rem] bg-[#F5F4F1] px-4 text-[#0F2E23]"
       >
         <span>
-          <span className="block font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] opacity-70">
+          <span className="block font-sans text-[0.58rem] font-semibold uppercase tracking-[0.12em] opacity-72">
             {formatShortDate(trip.nextDeparture)} / {trip.spotsLeft ? `${trip.spotsLeft} spots` : 'Open'}
           </span>
           <span className="block font-heading text-2xl leading-none tracking-[0.01em]">Reserve this trip</span>

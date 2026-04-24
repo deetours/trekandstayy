@@ -89,16 +89,16 @@ export default function TripsExperience({ trips }: TripsExperienceProps) {
       />
       <FeaturedRoutesEditorial trips={featuredTrips} />
       <section id="upcoming-routes" className="relative mx-auto max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="mb-10 grid gap-6 border-y border-[#F5F4F1]/10 py-8 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="mb-10 grid gap-6 border-y border-[#F5F4F1]/10 py-9 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
-            <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">
               Expedition board
             </p>
-            <h2 className="mt-4 max-w-xl font-heading text-5xl leading-[0.92] tracking-[0.02em] text-[#F5F4F1] md:text-7xl">
+            <h2 className="mt-4 max-w-xl font-heading text-5xl leading-[0.9] tracking-[0.015em] text-[#F5F4F1] md:text-[4.35rem]">
               FIND THE ROAD THAT FITS
             </h2>
           </div>
-          <p className="max-w-2xl self-end text-base leading-7 text-[#B7DCE5]/72 md:text-lg">
+          <p className="max-w-[38rem] self-end text-base leading-8 text-[#F5F4F1]/72 md:text-[1.05rem]">
             Start with region, effort, season, or budget. Trek &amp; Stay keeps the board practical so you can choose
             faster and ask better questions before you book.
           </p>
@@ -119,11 +119,11 @@ export default function TripsExperience({ trips }: TripsExperienceProps) {
               <button
                 type="button"
                 onClick={() => setIsFilterOpen(true)}
-                className="rounded-full border border-[#F5F4F1]/14 bg-[#0F2E23]/80 px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#F5F4F1] transition duration-300 active:translate-y-[1px]"
+                className="rounded-full border border-[#F5F4F1]/12 bg-[#0F2E23]/84 px-5 py-3 font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#F5F4F1] transition duration-300 active:translate-y-[1px]"
               >
                 Filters {activeFilterCount > 0 ? `(${activeFilterCount})` : ''}
               </button>
-              <p className="font-sans text-xs uppercase tracking-[0.22em] text-[#9AA1A6]">
+              <p className="font-sans text-[0.68rem] uppercase tracking-[0.18em] text-[#B8BEBB]">
                 {filteredTrips.length} routes
               </p>
             </div>
@@ -187,7 +187,7 @@ export default function TripsExperience({ trips }: TripsExperienceProps) {
 
 function TripsHero() {
   return (
-    <section className="relative isolate flex min-h-[78dvh] items-end overflow-hidden px-4 pb-12 pt-28 sm:px-6 lg:min-h-[86dvh] lg:px-8 lg:pb-18">
+    <section className="relative isolate flex min-h-[78dvh] items-end overflow-hidden px-4 pb-12 pt-28 sm:px-6 lg:min-h-[86dvh] lg:px-8 lg:pb-20">
       <motion.div
         className="absolute inset-0 -z-20 bg-[url('/images/mountain-vista.jpg')] bg-cover bg-center trips-hero-drift"
         initial={{ scale: 1.05, opacity: 0.72 }}
@@ -204,36 +204,36 @@ function TripsHero() {
           animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-5 font-sans text-[0.68rem] font-bold uppercase tracking-[0.32em] text-[#CFAF6B]">
+          <p className="mb-5 font-sans text-[0.66rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">
             Trek &amp; Stay route board
           </p>
-          <h1 className="max-w-5xl font-heading text-[clamp(4.8rem,13vw,12.5rem)] leading-[0.82] tracking-[0.01em] text-[#F5F4F1]">
+          <h1 className="max-w-5xl font-heading text-[clamp(4.8rem,13vw,12.5rem)] leading-[0.82] tracking-[0.008em] text-[#F5F4F1]">
             CHOOSE YOUR ROUTE
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-[#F5F4F1]/78 md:text-xl md:leading-8">
+          <p className="mt-7 max-w-[34rem] text-base leading-8 text-[#F5F4F1]/80 md:text-[1.1rem] md:leading-9">
             Treks in Karnataka and Maharashtra. Road journeys through Himachal. Clear effort levels, small groups, and
             routes run by people who know the ground.
           </p>
         </motion.div>
 
         <motion.div
-          className="max-w-md border-l border-[#F5F4F1]/12 pl-6 lg:mb-8"
+          className="max-w-md border-l border-[#F5F4F1]/10 pl-7 lg:mb-8"
           initial={{ x: 20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#9AA1A6]">
+          <p className="font-sans text-[0.64rem] font-bold uppercase tracking-[0.18em] text-[#B8BEBB]">
             Current board
           </p>
-          <div className="mt-5 grid grid-cols-3 gap-3">
+          <div className="mt-6 grid grid-cols-3 gap-4">
             {[
               ['03', 'regions'],
               ['08', 'routes'],
               ['01', 'decision'],
             ].map(([value, label]) => (
-              <div key={label} className="border-t border-[#F5F4F1]/14 pt-3">
-                <p className="font-heading text-4xl leading-none text-[#F5F4F1]">{value}</p>
-                <p className="mt-1 font-sans text-[0.62rem] uppercase tracking-[0.18em] text-[#9AA1A6]">
+              <div key={label} className="border-t border-[#F5F4F1]/12 pt-4">
+                <p className="font-heading text-[2.1rem] leading-none text-[#F5F4F1]">{value}</p>
+                <p className="mt-1.5 font-sans text-[0.6rem] uppercase tracking-[0.12em] text-[#C2C8C4]">
                   {label}
                 </p>
               </div>
@@ -256,11 +256,11 @@ function RouteIdentitySelector({
 
   return (
     <section className="relative mx-auto max-w-[1440px] px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-4 flex flex-col gap-2 lg:flex-row lg:items-end lg:justify-between">
-        <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">
+      <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+        <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.2em] text-[#CFAF6B]">
           Start with identity
         </p>
-        <p className="max-w-xl text-sm leading-6 text-[#F5F4F1]/58">
+        <p className="max-w-xl text-sm leading-6 text-[#F5F4F1]/66">
           Start with the kind of route you want, then narrow by effort, time, and season.
         </p>
       </div>
@@ -276,12 +276,12 @@ function RouteIdentitySelector({
                 aria-pressed={isActive}
                 onClick={() => onSelect(identity)}
                 className={cn(
-                  'relative overflow-hidden rounded-[0.85rem] border px-4 py-3 font-sans text-[0.68rem] font-bold uppercase tracking-[0.18em] transition duration-300 active:translate-y-[1px]',
+                  'relative overflow-hidden rounded-[0.85rem] border px-4 py-3 font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] transition duration-300 active:translate-y-[1px]',
                   isActive
                     ? 'border-[#CFAF6B]/70 bg-[#CFAF6B]/12 text-[#F5F4F1]'
-                    : 'border-[#F5F4F1]/10 bg-[#0F2E23]/48 text-[#F5F4F1]/64 hover:border-[#F5F4F1]/24 hover:text-[#F5F4F1]',
+                    : 'border-[#F5F4F1]/9 bg-[#0F2E23]/44 text-[#F5F4F1]/72 hover:border-[#F5F4F1]/18 hover:text-[#F5F4F1]',
                 )}
-                whileHover={{ y: -2 }}
+                whileHover={{ y: -1 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 24 }}
               >
                 {isActive ? (
@@ -302,14 +302,14 @@ function FeaturedRoutesEditorial({ trips }: { trips: Trip[] }) {
     <section className="relative mx-auto max-w-[1440px] px-4 py-10 sm:px-6 lg:px-8 lg:py-20">
       <div className="mb-8 flex items-end justify-between gap-6">
         <div>
-          <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#CFAF6B]">
+          <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
             Featured routes
           </p>
-          <h2 className="mt-3 max-w-3xl font-heading text-5xl leading-[0.9] tracking-[0.02em] text-[#F5F4F1] md:text-7xl">
+          <h2 className="mt-3 max-w-3xl font-heading text-5xl leading-[0.9] tracking-[0.015em] text-[#F5F4F1] md:text-[4.35rem]">
             START WITH THE ONES THAT ALREADY HAVE WEATHER
           </h2>
         </div>
-        <p className="hidden max-w-sm text-sm leading-6 text-[#9AA1A6] lg:block">
+        <p className="hidden max-w-sm text-sm leading-7 text-[#BFC5C1] lg:block">
           Start with the strongest current routes, then move into the full board.
         </p>
       </div>
@@ -335,20 +335,20 @@ function FeaturedRoutePanel({ trip, dominant = false }: { trip: Trip; dominant?:
         'group relative min-h-[340px] overflow-hidden rounded-[1.65rem] border border-[#F5F4F1]/10 bg-[#0F2E23]',
         dominant ? 'lg:min-h-[680px]' : 'lg:min-h-[216px]',
       )}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -3 }}
       transition={{ type: 'spring', stiffness: 130, damping: 20 }}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-[1.045]"
+        className="absolute inset-0 bg-cover bg-center transition duration-[820ms] group-hover:scale-[1.038]"
         style={{ backgroundImage: `url(${trip.image})` }}
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,8,7,0.9),rgba(5,8,7,0.38)),linear-gradient(180deg,transparent,rgba(5,8,7,0.88))]" />
       <div className="relative flex h-full min-h-[inherit] flex-col justify-end p-5 sm:p-7 lg:p-9">
         <div className="mb-auto flex items-start justify-between gap-4">
-          <p className="rounded-full border border-[#CFAF6B]/30 bg-[#050807]/24 px-3 py-2 font-sans text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#CFAF6B] backdrop-blur-xl">
+          <p className="rounded-full border border-[#CFAF6B]/26 bg-[#050807]/22 px-3 py-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#CFAF6B] backdrop-blur-xl">
             {trip.region}
           </p>
-          <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.22em] text-[#F5F4F1]/62">
+          <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#F5F4F1]/68">
             {trip.durationLabel}
           </p>
         </div>
@@ -361,8 +361,8 @@ function FeaturedRoutePanel({ trip, dominant = false }: { trip: Trip; dominant?:
           >
             {trip.title}
           </h3>
-          <p className="mt-4 max-w-xl text-base leading-7 text-[#F5F4F1]/78">{trip.descriptor}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <p className="mt-5 max-w-[34rem] text-base leading-8 text-[#F5F4F1]/78">{trip.descriptor}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-2.5">
             <TripPill>{trip.difficulty}</TripPill>
             <TripPill>From {formatMoney(trip.startingPrice)}</TripPill>
             <Link
@@ -395,29 +395,29 @@ function TripsDiscoveryRail({
     <div
       className={cn(
         'border-[#F5F4F1]/10 bg-[#07110D]/72 backdrop-blur-xl',
-        compact ? 'rounded-[1.2rem] border p-4' : 'sticky top-24 rounded-[1.45rem] border p-5',
+        compact ? 'rounded-[1.2rem] border p-4' : 'sticky top-24 rounded-[1.45rem] border p-6',
       )}
     >
-      <div className="mb-6 flex items-center justify-between border-b border-[#F5F4F1]/10 pb-4">
+      <div className="mb-7 flex items-center justify-between border-b border-[#F5F4F1]/10 pb-5">
         <div>
-          <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">
+          <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#CFAF6B]">
             Narrow the route
           </p>
-          <p className="mt-1 text-sm text-[#9AA1A6]">{activeFilterCount} active filters</p>
+          <p className="mt-1.5 text-sm text-[#BFC5C1]">{activeFilterCount} active filters</p>
         </div>
         <button
           type="button"
           onClick={onReset}
-          className="text-xs font-bold uppercase tracking-[0.18em] text-[#F5F4F1]/60 transition hover:text-[#F5F4F1]"
+          className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#F5F4F1]/68 transition hover:text-[#F5F4F1]"
         >
           Reset
         </button>
       </div>
 
-      <div className="space-y-5">
+      <div className="space-y-6">
         {filterGroups.map((group) => (
           <div key={group.key}>
-            <p className="mb-2 font-sans text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#9AA1A6]">
+            <p className="mb-3 font-sans text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#BCC2BE]">
               {group.label}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -431,10 +431,10 @@ function TripsDiscoveryRail({
                     aria-pressed={isActive}
                     onClick={() => onChange(group.key, value)}
                     className={cn(
-                      'rounded-full border px-3 py-2 text-xs font-medium transition duration-300 active:translate-y-[1px]',
+                      'rounded-full border px-3 py-2 text-[0.72rem] font-medium transition duration-300 active:translate-y-[1px]',
                       isActive
                         ? 'border-[#CFAF6B]/60 bg-[#CFAF6B]/12 text-[#F5F4F1]'
-                        : 'border-[#F5F4F1]/9 text-[#F5F4F1]/56 hover:border-[#F5F4F1]/22 hover:text-[#F5F4F1]',
+                        : 'border-[#F5F4F1]/8 text-[#F5F4F1]/68 hover:border-[#F5F4F1]/18 hover:text-[#F5F4F1]',
                     )}
                   >
                     {value}
@@ -462,20 +462,20 @@ function TripsListBoard({
 }) {
   return (
     <motion.div layout className="space-y-4">
-      <div className="hidden items-end justify-between gap-6 border-b border-[#F5F4F1]/10 pb-4 lg:flex">
-        <div>
-          <p className="font-sans text-[0.7rem] font-bold uppercase tracking-[0.24em] text-[#9AA1A6]">
-            {trips.length} routes on the board
-          </p>
-          <p className="mt-2 text-sm text-[#F5F4F1]/56">{activeFilterSummary}</p>
-          <p className="mt-3 text-sm text-[#F5F4F1]/48">
-            Need more context?{' '}
-            <Link href="/about" className="text-[#CFAF6B] transition hover:text-[#F5F4F1]">
-              See how Trek &amp; Stay runs trips.
+        <div className="hidden items-end justify-between gap-6 border-b border-[#F5F4F1]/10 pb-5 lg:flex">
+          <div>
+            <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.18em] text-[#BCC2BE]">
+              {trips.length} routes on the board
+            </p>
+            <p className="mt-2.5 text-sm text-[#F5F4F1]/66">{activeFilterSummary}</p>
+            <p className="mt-4 text-sm text-[#F5F4F1]/58">
+              Need more context?{' '}
+              <Link href="/about" className="text-[#CFAF6B] transition hover:text-[#F5F4F1]">
+                See how Trek &amp; Stay runs trips.
             </Link>
           </p>
         </div>
-        <p className="text-sm text-[#F5F4F1]/56">
+        <p className="text-sm text-[#F5F4F1]/62">
           {filters.identity === 'All Routes' ? 'Choose by route type, effort, season, and start point.' : filters.identity}
         </p>
       </div>
@@ -525,15 +525,15 @@ function TripRouteCard({ trip, index }: { trip: Trip; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.42, delay: Math.min(index * 0.035, 0.22), ease: [0.16, 1, 0.3, 1] }}
-      className="group grid overflow-hidden rounded-[1.45rem] border border-[#F5F4F1]/10 bg-[#08150F]/80 transition duration-300 hover:border-[#CFAF6B]/32 lg:grid-cols-[270px_minmax(0,1fr)]"
+      className="group grid overflow-hidden rounded-[1.45rem] border border-[#F5F4F1]/9 bg-[#08150F]/80 transition duration-300 hover:border-[#CFAF6B]/24 lg:grid-cols-[270px_minmax(0,1fr)]"
     >
       <div className="relative min-h-[230px] overflow-hidden lg:min-h-full">
         <div
-          className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-[1.06]"
+          className="absolute inset-0 bg-cover bg-center transition duration-[820ms] group-hover:scale-[1.045]"
           style={{ backgroundImage: `url(${trip.image})` }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(5,8,7,0.82))]" />
-        <div className="absolute bottom-4 left-4 rounded-full border border-[#F5F4F1]/14 bg-[#050807]/34 px-3 py-2 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#F5F4F1]/78 backdrop-blur-xl">
+        <div className="absolute bottom-4 left-4 rounded-full border border-[#F5F4F1]/12 bg-[#050807]/30 px-3 py-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#F5F4F1]/80 backdrop-blur-xl">
           {trip.type}
         </div>
       </div>
@@ -549,10 +549,10 @@ function TripRouteCard({ trip, index }: { trip: Trip; index: number }) {
             </h3>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[#F5F4F1]/74">{trip.descriptor}</p>
           </div>
-          <div className="shrink-0 border-l border-[#F5F4F1]/10 pl-4">
+          <div className="shrink-0 border-l border-[#F5F4F1]/8 pl-5">
             <p className="font-heading text-3xl leading-none text-[#F5F4F1]/92">{formatMoney(trip.startingPrice)}</p>
-            <p className="mt-1 font-sans text-[0.62rem] uppercase tracking-[0.18em] text-[#9AA1A6]">starting</p>
-            <p className="mt-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#CFAF6B]/76">
+            <p className="mt-1.5 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-[#BCC2BE]">starting</p>
+            <p className="mt-3.5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.12em] text-[#CFAF6B]/80">
               {trip.spotsLeft ? `${trip.spotsLeft} spots left` : 'Upcoming'}
             </p>
           </div>
@@ -560,12 +560,12 @@ function TripRouteCard({ trip, index }: { trip: Trip; index: number }) {
 
         <TripMetaRow trip={trip} />
 
-        <div className="mt-5 grid gap-4 border-t border-[#F5F4F1]/10 pt-5 md:grid-cols-[1fr_auto] md:items-end">
+        <div className="mt-6 grid gap-4 border-t border-[#F5F4F1]/10 pt-6 md:grid-cols-[1fr_auto] md:items-end">
           <div>
-            <p className="text-sm leading-6 text-[#B7DCE5]/64">{trip.realityNote}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <p className="max-w-[34rem] text-sm leading-6 text-[#F5F4F1]/64">{trip.realityNote}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
               {trip.highlights.slice(0, 3).map((highlight) => (
-                <span key={highlight} className="text-xs text-[#F5F4F1]/52">
+                <span key={highlight} className="text-xs text-[#F5F4F1]/56">
                   {highlight}
                 </span>
               ))}
@@ -594,9 +594,9 @@ function TripMetaRow({ trip }: { trip: Trip }) {
   return (
     <div className="mt-5 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
       {meta.map(([label, value]) => (
-        <div key={label} className="rounded-[1rem] border border-[#F5F4F1]/10 bg-[#F5F4F1]/5 px-3 py-3">
-          <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.18em] text-[#9AA1A6]">{label}</p>
-          <p className="mt-1 font-sans text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#F5F4F1]/78">
+        <div key={label} className="rounded-[1rem] border border-[#F5F4F1]/8 bg-[#F5F4F1]/5 px-3 py-3.5">
+          <p className="font-sans text-[0.56rem] font-bold uppercase tracking-[0.12em] text-[#BCC2BE]">{label}</p>
+          <p className="mt-1.5 font-sans text-[0.74rem] font-semibold uppercase tracking-[0.08em] text-[#F5F4F1]/84">
             {value}
           </p>
         </div>
@@ -607,7 +607,7 @@ function TripMetaRow({ trip }: { trip: Trip }) {
 
 function TripPill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-[#F5F4F1]/10 bg-[#F5F4F1]/5 px-3 py-2 font-sans text-[0.66rem] font-bold uppercase tracking-[0.16em] text-[#F5F4F1]/68">
+    <span className="rounded-full border border-[#F5F4F1]/8 bg-[#F5F4F1]/5 px-3 py-2 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[#F5F4F1]/72">
       {children}
     </span>
   )
@@ -621,19 +621,19 @@ function RealityStrip() {
           <div className="relative min-h-[300px] p-7 md:p-10">
             <div className="trips-topography absolute inset-0 opacity-[0.13]" />
             <div className="relative">
-              <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#CFAF6B]">
+              <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
                 Reality layer
               </p>
-              <h2 className="mt-4 max-w-lg font-heading text-6xl leading-[0.88] text-[#F5F4F1] md:text-8xl">
+              <h2 className="mt-4 max-w-lg font-heading text-6xl leading-[0.88] text-[#F5F4F1] md:text-[4.9rem]">
                 READ THIS BEFORE THE ROAD
               </h2>
             </div>
           </div>
           <div className="divide-y divide-[#F5F4F1]/10 border-t border-[#F5F4F1]/10 lg:border-l lg:border-t-0">
             {realityNotes.map(([title, body]) => (
-              <div key={title} className="grid gap-3 p-5 md:grid-cols-[190px_minmax(0,1fr)] md:p-7">
+              <div key={title} className="grid gap-4 p-5 md:grid-cols-[190px_minmax(0,1fr)] md:p-7">
                 <h3 className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#F5F4F1]">{title}</h3>
-                <p className="text-sm leading-6 text-[#9AA1A6]">{body}</p>
+                <p className="text-sm leading-7 text-[#BEC4C0]">{body}</p>
               </div>
             ))}
           </div>
@@ -648,14 +648,14 @@ function TribeProofRail() {
     <section className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
       <div className="mb-8 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div>
-          <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#CFAF6B]">
+          <p className="font-sans text-[0.66rem] font-bold uppercase tracking-[0.22em] text-[#CFAF6B]">
             Tribe proof
           </p>
-          <h2 className="mt-3 font-heading text-5xl leading-[0.92] text-[#F5F4F1] md:text-7xl">
+          <h2 className="mt-3 font-heading text-5xl leading-[0.9] text-[#F5F4F1] md:text-[4.35rem]">
             NOT TESTIMONIALS. TRACE EVIDENCE.
           </h2>
         </div>
-        <p className="max-w-2xl text-base leading-7 text-[#F5F4F1]/62">
+        <p className="max-w-2xl text-base leading-8 text-[#F5F4F1]/68">
           Short field proof from people who have already taken the route.
         </p>
       </div>
@@ -668,19 +668,19 @@ function TribeProofRail() {
               'group overflow-hidden rounded-[1.5rem] border border-[#F5F4F1]/10 bg-[#08150F]',
               index === 1 ? 'md:mt-10' : '',
             )}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: -3 }}
             transition={{ type: 'spring', stiffness: 130, damping: 20 }}
           >
             <div className="relative h-64 overflow-hidden">
               <div
-                className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-[1.055]"
+                className="absolute inset-0 bg-cover bg-center transition duration-[820ms] group-hover:scale-[1.04]"
                 style={{ backgroundImage: `url(${note.image})` }}
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(5,8,7,0.9))]" />
             </div>
             <figcaption className="p-5">
-              <p className="text-lg leading-7 text-[#F5F4F1]/84">"{note.quote}"</p>
-              <p className="mt-4 font-sans text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#CFAF6B]">
+              <p className="text-[1.02rem] leading-7 text-[#F5F4F1]/82">"{note.quote}"</p>
+              <p className="mt-4 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#CFAF6B]/88">
                 {note.meta}
               </p>
             </figcaption>
@@ -703,15 +703,15 @@ function DecisionSplitCTA() {
             key={title}
             className={cn('relative p-7 md:p-10', index === 1 ? 'border-t border-[#F5F4F1]/10 lg:border-l lg:border-t-0' : '')}
           >
-            <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.24em] text-[#CFAF6B]">
+            <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.18em] text-[#CFAF6B]">
               Path {String(index + 1).padStart(2, '0')}
             </p>
-            <h2 className="mt-4 font-heading text-5xl leading-[0.9] text-[#F5F4F1] md:text-7xl">{title}</h2>
-            <p className="mt-4 max-w-md text-base leading-7 text-[#F5F4F1]/64">{body}</p>
+            <h2 className="mt-4 font-heading text-[2.9rem] leading-[0.92] text-[#F5F4F1] md:text-[4.2rem]">{title}</h2>
+            <p className="mt-4 max-w-md text-base leading-8 text-[#F5F4F1]/68">{body}</p>
             <Link
               href={href}
               className={cn(
-                'mt-8 inline-flex h-12 items-center rounded-full px-6 font-sans text-[0.68rem] font-bold uppercase tracking-[0.18em] transition duration-300 active:translate-y-[1px]',
+                'mt-7 inline-flex h-12 items-center rounded-full px-6 font-sans text-[0.66rem] font-semibold uppercase tracking-[0.14em] transition duration-300 active:translate-y-[1px]',
                 index === 0
                   ? 'bg-[#F5F4F1] text-[#0F2E23] hover:bg-[#CFAF6B]'
                   : 'border border-[#F5F4F1]/14 text-[#F5F4F1] hover:border-[#CFAF6B]/50 hover:text-[#CFAF6B]',
@@ -728,13 +728,13 @@ function DecisionSplitCTA() {
 
 function MobileStickyTripCTA({ count }: { count: number }) {
   return (
-    <div className="fixed inset-x-3 bottom-3 z-20 rounded-full border border-[#F5F4F1]/12 bg-[#050807]/70 p-2 backdrop-blur-2xl lg:hidden">
+    <div className="fixed inset-x-3 bottom-3 z-20 rounded-full border border-[#F5F4F1]/10 bg-[#050807]/70 p-2 backdrop-blur-2xl lg:hidden">
       <Link
         href="#upcoming-routes"
-        className="flex h-12 items-center justify-between rounded-full bg-[#F5F4F1] px-5 font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#0F2E23]"
+        className="flex h-12 items-center justify-between rounded-full bg-[#F5F4F1] px-5 font-sans text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-[#0F2E23]"
       >
         <span>{count} routes</span>
-        <span>View</span>
+        <span>Open board</span>
       </Link>
     </div>
   )

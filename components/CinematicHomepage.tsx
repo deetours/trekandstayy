@@ -103,11 +103,14 @@ export default function CinematicHomepage() {
     const stage = stageRef.current
     if (!stage) return
 
+    const isMobile = window.matchMedia('(max-width: 760px)').matches
+
     const lenis = new Lenis({
       duration: 1.45,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      syncTouch: false,
+      syncTouch: isMobile,
+      touchMultiplier: isMobile ? 1.05 : 1,
     })
 
     const raf = (time: number) => {
@@ -118,8 +121,7 @@ export default function CinematicHomepage() {
     gsap.ticker.lagSmoothing(0)
     lenis.on('scroll', ScrollTrigger.update)
 
-    const isMobile = window.matchMedia('(max-width: 760px)').matches
-    const scrollDistance = window.innerHeight * (isMobile ? 6.5 : 9)
+    const scrollDistance = window.innerHeight * (isMobile ? 7.35 : 9)
 
     const ctx = gsap.context(() => {
       const layers = layerRefs.current
@@ -149,13 +151,15 @@ export default function CinematicHomepage() {
 
       gsap.set(beatElements, {
         autoAlpha: 0,
-        yPercent: 10,
-        filter: 'blur(12px)',
+        yPercent: isMobile ? 4 : 10,
+        filter: isMobile ? 'none' : 'blur(12px)',
+        force3D: true,
       })
       gsap.set(beatRefs.current.edge, {
         autoAlpha: 1,
         yPercent: 0,
-        filter: 'blur(0px)',
+        filter: 'none',
+        force3D: true,
       })
       gsap.set(ctaRef.current, {
         autoAlpha: 0,
@@ -170,26 +174,57 @@ export default function CinematicHomepage() {
       gsap.set(layerElements, { autoAlpha: 0 })
       gsap.set(layers.road, { autoAlpha: 1, scale: 1.06 })
 
-      const revealBeat = (id: string, start: number, hold = 0.08) => {
+      const revealBeat = (
+        id: string,
+        start: number,
+        hold = 0.08,
+        options?: {
+          enterDuration?: number
+          exitDuration?: number
+          exitYPercent?: number
+        },
+      ) => {
         const beat = beatRefs.current[id]
         if (!beat) return
 
+        const enterDuration = options?.enterDuration ?? 0.045
+        const exitDuration = options?.exitDuration ?? 0.05
+        const exitYPercent = options?.exitYPercent ?? (isMobile ? -3 : -7)
+
         timeline
-          .to(beat, { autoAlpha: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.045 }, start)
-          .to(beat, { autoAlpha: 1, duration: hold }, start + 0.045)
-          .to(beat, { autoAlpha: 0, yPercent: -7, filter: 'blur(10px)', duration: 0.05 }, start + 0.045 + hold)
+          .to(
+            beat,
+            {
+              autoAlpha: 1,
+              yPercent: 0,
+              filter: 'none',
+              duration: enterDuration,
+            },
+            start,
+          )
+          .to(beat, { autoAlpha: 1, duration: hold }, start + enterDuration)
+          .to(
+            beat,
+            {
+              autoAlpha: 0,
+              yPercent: exitYPercent,
+              filter: 'none',
+              duration: exitDuration,
+            },
+            start + enterDuration + hold,
+          )
       }
 
       if (isMobile) {
-        revealBeat('edge', 0, 0.06)
-        revealBeat('pull', 0.18, 0.05)
-        revealBeat('normal', 0.31, 0.06)
-        revealBeat('wild', 0.46, 0.04)
-        revealBeat('climb', 0.58, 0.05)
-        revealBeat('break', 0.7, 0.06)
-        revealBeat('release', 0.81, 0.05)
-        revealBeat('summit', 0.9, 0.03)
-        revealBeat('tribe', 0.945, 0.02)
+        revealBeat('edge', 0, 0.07, { exitDuration: 0.04 })
+        revealBeat('pull', 0.17, 0.06, { exitDuration: 0.04 })
+        revealBeat('normal', 0.3, 0.07, { exitDuration: 0.04 })
+        revealBeat('wild', 0.45, 0.05, { exitDuration: 0.035, exitYPercent: -2 })
+        revealBeat('climb', 0.57, 0.06, { exitDuration: 0.04 })
+        revealBeat('break', 0.685, 0.075, { exitDuration: 0.04, exitYPercent: -2 })
+        revealBeat('release', 0.8, 0.08, { exitDuration: 0.04 })
+        revealBeat('summit', 0.89, 0.085, { enterDuration: 0.04, exitDuration: 0.035, exitYPercent: -1 })
+        revealBeat('tribe', 0.945, 0.055, { enterDuration: 0.04, exitDuration: 0.03, exitYPercent: -1 })
       } else {
         revealBeat('edge', 0, 0.115)
         revealBeat('pull', 0.11, 0.07)
